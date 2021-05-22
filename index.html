@@ -1,0 +1,212 @@
+<!--Haris Waqar - 4^AI (2020/2021)-->
+<!DOCTYPE html>
+<html lang="it">                                                                   <!--Specifica il linguaggio naturale di una pagina web-->
+<head>                                                                             <!--INIZIO HEAD: è un contenitore per i metadati (dati sui dati)-->
+    <meta charset="UTF-8">                                                         <!--Per far sì che le lettere accentate delle tue pagine HTML siano visualizzate correttamente da tutti i browser devi informare questi ultimi del fatto che stai utilizzando la codifica UTF-8-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">                          <!--Il tag definisce i metadati su un documento HTML. I metadati sono dati (informazioni) sui dati.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">         <!--Il tag definisce i metadati su un documento HTML. I metadati sono dati (informazioni) sui dati.-->
+    <link rel="stylesheet" href="style.css">                                       <!--Prendo il file CSS presente nella cartella-->
+    <script type="text/javascript" src="JS.js"></script>                           <!--Prendo il file JS presente nella cartella-->
+    <link rel="shortcut icon" href="favicon.png">                                  <!--Una piccola immagine utilizzata come icona al sito web correlato-->
+    <title>Tipi di input</title>
+    
+</head>                                                                           <!--FINE HEAD-->
+
+<body>                                                                            <!--INIZIO BODY-->
+<form>                                                                            <!--INIZIO FORM-->
+    
+    <div class="contenitore">                                                     <!--INIZIO CONTENITORE SUPREMO-->
+    
+    <h1 style="text-align: center; font-size: 50px; font-style: oblique;">Tipi di input in una form</h1>        <!--TITOLO-->
+
+
+<!--viene utilizzato per definire un campo di input contenente un colore.
+     Consente all'utente di specificare il colore tramite l'interfaccia del colore visivo su un browser.-->
+    <div class="inputType">
+        <fieldset>
+            <legend>COLORE</legend>
+            <input  type="color" id="nome" value="cambia colore" ><br>
+            <!--<input type="text" id="testo">-->
+            <input style="font-size: 20px; border-radius: 10px; font-style: italic; cursor: pointer;"  type="button" id="bottoneColore" value="Cambia colore" onclick="cambiaColore()">  
+            <input style="font-size: 20px; border-radius: 10px; font-style: italic; cursor: pointer;"  type="button" id="bottoneReset" value="Reset" onclick="resetColore()">  
+        </fieldset>
+    </div>
+
+
+<!--Campi di testo a riga singola di base-->
+    <div class="inputType">
+        <fieldset>
+            <legend>TEXT</legend>
+            <label>Nome</label><br>  
+            <input placeholder="Inserire il nome"  pattern="[a-zA-Z]+" title="Inserisci solo lettere!" type="text" id="nome" minlength="2" required size="10"maxlength="10"><br>  
+            <label>Cognome</label><br>  
+            <input placeholder="Inserire il cognome" pattern="[a-zA-Z]+" title="Inserisci solo lettere!" type="text" id="nome"  min="2" required size="10" maxlength="10"> <br> 
+        </fieldset>
+    </div>
+
+
+<!--Forniscono all'utente un modo per immettere in modo sicuro una password.
+    L'elemento viene presentato come un controllo editor di testo normale a una riga in cui il testo viene oscurato in modo che non possa essere letto, 
+    in genere sostituendo ogni carattere con un simbolo come l'asterisco ("*") o un punto ("•")-->
+    <div class="inputType">
+        <fieldset>
+            <legend>PASSWORD</legend>
+            <input  title="La password deve essere minimo 8 char" pattern=".{8,}"  placeholder="Inserire la password"  type="password" id="nome"  required size="10"maxlength="10"><br>  
+        </fieldset>
+    </div>
+
+
+<!---e-mail vengono utilizzati per iniezioni e modifiche di un indirizzo di posta elettronica o,
+     se viene specificato l'attributo multiplo, un elenco di indirizzi di posta elettronica-->
+    <div class="inputType">
+        <fieldset>
+            <legend>EMAIL</legend>
+            <input placeholder="Inserire la mail" pattern=".+@gmail.com" title="Questa mail deve finire con '@gmail.com'" id="nome" type="email" size="10" required>    
+        </fieldset>
+    </div>
+
+
+<!--vengono utilizzati per lasciare che l'utente immetti un numero. Includono la convalida integrata per rifiutare le voci non numeriche.
+    Il browser può scegliere di fornire frecce stepper per lasciare che l'utente aumenti e diminuisca il valore-->
+    <div class="inputType">
+        <fieldset>
+            <legend>NUMERO</legend>
+            <input style="text-align: center;"  placeholder="Inserire un nummero"  id="nome" type="number" min="0" max="10"> 
+
+        </fieldset>
+    </div>
+
+
+<!--consentono all'utente di scegliere uno o più file dall'archiviazione del dispositivo.
+    Una volta scelti, i file possono essere caricati su un server utilizzando l'invio di form manipolati utilizzando il codice JavaScript-->
+    <div class="inputType">
+        <fieldset>
+        <legend>FILE</legend>
+            <input style="text-align: center;" id="nome" type="file"> 
+        </fieldset>
+    </div>
+
+    
+<!--Controlli di input che consentono all'utente di immettere facilmente sia una data che un'ora, inclusi l'anno, il mese e il giorno, nonché l'ora in ore e minuti-->
+    <div class="inputType">
+        <fieldset>
+            <legend>DATA ED ORA</legend>
+            Seleziona data & ora: <input style="text-align: center;" id="nome" type="datetime-local"> 
+        </fieldset>
+    </div>
+
+
+<!--consentono all'utente di specificare un valore numerico che non deve essere inferiore a un determinato valore e non superiore a un altro valore specificato.
+     Il valore preciso, tuttavia, non è considerato importante. Questo viene in genere rappresentato utilizzando un dispositivo di scorrimento o un controllo di accesso esterno.
+      Poiché questo tipo di widget è impreciso, in genere non dovrebbe essere utilizzato a meno che il valore esatto del controllo non sia importante.-->
+    <div class="inputType">
+        <fieldset>
+            <legend>RANGE</legend>
+            <input  type="range" id="barra" name="nome" min="0" max="100" step="5" onchange="valoreRange(this.value); ">
+            <br><input style="font-size: 20px; text-align: center;" type="text" id="valore" size="1" value="50">
+            <input style="font-size: 20px; border-radius: 10px; font-style: italic; cursor: pointer;" type="button" id="bottone" value="Inserisci" onclick="valoreBottone(document.getElementById('valore').value)">
+        </fieldset>
+    </div>
+
+
+<!--Sottoposti a rendering per impostazione predefinita come caselle che possono essere selezionate, come si potrebbe vedere in un modulo cartaceo ufficiale del governo.
+     L'aspetto esatto dipende dalla configurazione del sistema operativo in cui è in esecuzione il browser.-->
+    <div class="inputType">
+        <fieldset>
+            <legend>CHECKBOX</legend>
+
+            <p>
+                <font size="5">Cosa vuoi mangiare?</font>
+            </p>
+             
+            <input type="checkbox" id="check" onclick="mostraCheck()">
+            <label style="font-size: 20px;">Gelato</label>
+
+            <input  type="checkbox" id="check2" onclick="mostraCheck()">
+            <label style="font-size: 20px;">Cioccolato</label>
+            
+            <br><br><input style="display: none; " type="checkbox" id="check3">
+            <label  style="display: none; font-size: 30px;" id="text" >Gelato al Cioccolato</label>
+            <br><label  style="display: none; font-size:15px;" id="minitext" >(Si lo so, é una canzone)</label>
+            
+        </fieldset>
+    </div>
+
+
+<!--generalmente utilizzati nei gruppi di radio,ovvero in raccolte di pulsanti di opzione che descrivono una serie di opzioni correlate.
+     È possibile selezionare contemporaneamente un solo pulsante di opzione in un determinato gruppo.
+    I pulsanti di opzione vengono in genere sottoposti a rendering come piccoli cerchi, che vengono riempiti o evidenziati quando selezionati.-->
+    <div class="inputType">
+        <fieldset>
+        <legend>RADIO</legend>
+        <p>
+            <font size="5"> Ti piace questa form? </font>
+        </p>
+
+            <input type="radio" id="si" name="radio" value="si" required>
+            <label>SI</label>
+            
+            <input type="radio" id="no" name="radio" value="no">
+            <label>NO</label>
+
+
+            <input type="radio" id="forse" name="radio" value="forse">
+            <label>FORSE</label>
+
+        </fieldset>
+
+    </div>
+
+
+<!--Permette all'utente di selezionare un valore da una lista-->
+    <div class="inputType">
+        <fieldset>
+            <legend>DROP-DOWN LIST</legend>
+            <p>
+                <font size="5">Quale animale sei? </font>
+            </p>
+            <select id="nome" name="animali">
+            <option value="cane">Sono un Gatto</option>
+            <option value="cane">Sono un Cane</option>
+            <option value="piccione">Sono un Piccione</option>
+            <option value="gallina">Sono una Gallina</option>
+        </select>
+
+        </fieldset>
+    </div>
+
+
+<!--Il tag definisce un controllo di input di testo su più righe.
+    Questo elemento viene spesso utilizzato in un modulo per raccogliere input degli utenti come commenti o recensioni
+    La dimensione di un'area di testo è specificata dagli attributi <cols>e <rows>(o con CSS).--->
+    <div class="inputType">
+        <fieldset>
+            <legend>TEXTAREA</legend>
+            <textarea style="text-align: center;" id="nome" placeholder="Inserire il testo" name="message" rows="5" cols="5" required title="Scrivi qualcosa"></textarea>
+        </fieldset>
+    </div>
+
+
+<!--vengono sottoposti a rendering come semplici pulsanti di comando, che possono essere programmati per controllare le funzionalità personalizzate in qualsiasi punto di una pagina Web in base alle esigenze-->
+    <div class="Button">
+        <fieldset>
+            <legend>BUTTON</legend>
+
+            <input  type="submit" value="Conferma">
+            <input  type="reset" value="Cancella">
+            <p>Per approfondire</p>
+
+            <input  style="font-size: 15px;  background-color: aqua;" onclick="location.href='https://github.com/yuniku-h/form.github.io.git'" type="button" value="Guarda il codice">
+            <br><br><input   onclick="location.href='https://www.w3schools.com/'" type="button" value="W3 schools">
+            <br><input   onclick="location.href='https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started'" type="button" value="MDS web doc">
+
+        </fieldset>
+    </div>
+
+    
+            </div>                  <!--FINE CONTENITORE SUPREMO-->
+        </form>                     <!--FINE FORM-->
+    
+    </body>                         <!--FINE BODY-->
+
+</html>                             <!--FINE HTML-->

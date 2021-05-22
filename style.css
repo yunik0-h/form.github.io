@@ -1,0 +1,75 @@
+.contenitore {
+    border-color: black;
+    margin: auto;
+    width: 95%;
+    border: 5px solid black;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+legend {
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.Button{
+  background-color: rgb(10, 73, 45);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+  position: fixed; 
+  bottom:2%;
+  
+}
+
+.inputType{
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+    border-radius: 15px;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.inputType:hover{
+    opacity: 1;
+}
+
+#nome{
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: auto;
+    display: block;
+    width: 500px;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    transition: 0.5s;
+}
+
+#nome:hover {
+    transition: 0.5s;
+  }
+
+
+/* ::-webkit-scrollbarpseudo elemento non standard , che ci consente di modificare l'aspetto della barra di scorrimento del browser. */
+::-webkit-scrollbar {
+  width: 40px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 20px;
+  }
+
+::-webkit-scrollbar-thumb {
+  background: gray; 
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: black; 
+}
